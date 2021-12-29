@@ -1,0 +1,47 @@
+			
+			
+			.\mvnw quarkus:dev
+			
+			.\mvnw quarkus:add-extensions -Dextensions="hibernate-orm-panache"
+			.\mvnw quarkus:add-extensions -Dextensions="quarkus-jdbc-postgresql"
+			.\mvnw quarkus:add-extensions -Dextensions="quarkus-resteasy-jackson"
+			
+			import.sql
+				insert into OrdemServico(id, descricao, data, categoria ) values(nestval('hibernate_sequence'), 'Realizar troca de impressora.', LocalDate.of(2021, 28, 12), 'URGENTE');
+				insert into OrdemServico(id, descricao, data, categoria ) values(nestval('hibernate_sequence'), 'Realizar troca de cpu.', LocalDate.of(2021, 28, 12), 'NAO URGENTE');
+				insert into OrdemServico(id, descricao, data, categoria ) values(nestval('hibernate_sequence'), 'Realizar troca de roteador.', LocalDate.of(2021, 28, 12), 'OUTRAS');
+				insert into OrdemServico(id, descricao, data, categoria ) values(nestval('hibernate_sequence'), 'Realizar troca de cabo de rede.', LocalDate.of(2021, 28, 12), 'URGENTE');
+				insert into OrdemServico(id, descricao, data, categoria ) values(nestval('hibernate_sequence'), 'Realizar troca de impressora.', LocalDate.of(2021, 28, 12), 'OUTRAS');
+				
+			
+			
+			entidade: OrdemServico (descricao, data, categoria)
+				
+				@Get
+				List<OrdemServico> list(){
+				return OrdemServico.listAll();}
+				
+				@Post
+				@Transactional
+				public void novaOrdemServico(){
+					OrdemServico ordenServico = new OrdemServico();
+					ordenServico.descricao = "Realizar troca de impressora.";
+					ordenServico.data = LocalDate.of(2021, 5, 12) ;
+					ordenServico.categoria = "OUTRAS";
+					ordenServico.persist();
+					}
+					
+				public class InserirOrdemServicoDTO{
+					
+					private String descricao;
+					private LocalDate data;
+					private String categoria;
+				}
+				
+				public void novaOrdemServico(InserirOrdemServicoDTO inserirOrdemServicoDTO){
+					
+					OrdemServico ordenServico = new OrdemServico();
+					ordenServico.descricao = inserirOrdemServicoDTO.getDescricao;
+					ordenServico.data = inserirOrdemServicoDTO.getData;
+					ordenServico.categoria = inserirOrdemServicoDTO.categoria;
+				}

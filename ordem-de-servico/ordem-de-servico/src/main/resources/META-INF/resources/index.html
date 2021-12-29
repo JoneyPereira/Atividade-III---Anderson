@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ordem-de-servico - 1.0.0-SNAPSHOT</title>
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem
+        }
+
+        h3 {
+            font-size: 1.75rem
+
+        }
+
+        h4 {
+            font-size: 1.5rem
+        }
+
+        h5 {
+            font-size: 1.25rem
+        }
+
+        h6 {
+            font-size: 1rem
+        }
+
+        .lead {
+            font-weight: 300;
+            font-size: 2rem;
+        }
+
+        .banner {
+            font-size: 2.7rem;
+            margin: 0;
+            padding: 2rem 1rem;
+            background-color: #0d1c2c;
+            color: white;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        code {
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 87.5%;
+            color: #e83e8c;
+            word-break: break-word;
+        }
+
+        .left-column {
+            padding: .75rem;
+            max-width: 75%;
+            min-width: 55%;
+        }
+
+        .right-column {
+            padding: .75rem;
+            max-width: 25%;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        li {
+            margin: 0.75rem;
+        }
+
+        .right-section {
+            margin-left: 1rem;
+            padding-left: 0.5rem;
+        }
+
+        .right-section h3 {
+            padding-top: 0;
+            font-weight: 200;
+        }
+
+        .right-section ul {
+            border-left: 0.3rem solid #71aeef;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .provided-code {
+            border-left: 0.3rem solid #71aeef;
+            padding-left: 10px;
+        }
+
+        .provided-code h3 {
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner lead">
+    Seja bem vindo ao meu projeto de curso!
+</div>
+
+<div class="container">
+    <div class="left-column">
+        <p class="lead"> Esta aplicação foi desenvolvida com Quarkus, uma aplicação em nuvem.</p>
+
+        <h2>O que é esta página?</h2>
+
+        <p>Esta página é servida pelo Quarkus. O codigo fonte está em
+            <code>src/main/resources/META-INF/resources/index.html</code>.</p>
+
+        <h2>Quais são os próximos passos?</h2>
+
+        <p>Se ainda não o fez, execute o aplicativo em <em>dev mode</em> using: <code>./mvnw compile quarkus:dev</code>.
+        </p>
+        <ul>
+            <li>Seus ativos estáticos estão localizados em <code>src/main/resources/META-INF/resources</code>.</li>
+            <li>Configure seu aplicativo em <code>src/main/resources/application.properties</code>.</li>
+            <li>Quarkus agora vem com um <a href="/q/dev/">Dev UI</a> (available in dev mode only)</li>
+            <li>Trabalhe com o código já fornecido localizado em <code>src/main/java</code>:</li>
+        </ul>
+                <div class="provided-code">
+            <h3>RESTEasy JAX-RS</h3>
+            <p>Inicie facilmente seus serviços da Web RESTful</p>
+            <p><code>@Path: <a href="/ordemservico" class="path-link" target="_blank">/ordemservico</a></code></p>
+            <p><a href="https://quarkus.io/guides/getting-started#the-jax-rs-resources" class="guide-link" target="_blank">Seção da página relacionada...</a></p>
+        </div>
+
+    </div>
+    <div class="right-column">
+        <div class="right-section">
+            <h3>Aplicação</h3>
+            <ul>
+                <li>GroupId: <code>anderson.com</code></li>
+                <li>ArtifactId: <code>ordem-de-servico</code></li>
+                <li>Version: <code>1.0.0-SNAPSHOT</code></li>
+                <li>Quarkus Version: <code>2.6.1.Final</code></li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <h3>Você gosta de quarkus?</h3>
+            <ul>
+                <li>Vá dar uma estrela <a href="https://github.com/quarkusio/quarkus">GitHub</a>.</li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <h3>Guias de extensões selecionadas</h3>
+            <ul>
+                <li title="REST endpoint framework implementing JAX-RS and more"><a href="https://quarkus.io/guides/rest-json" target="_blank">RESTEasy JAX-RS guide</a></li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <h3>Leia mais</h3>
+            <ul>
+                <li><a href="https://quarkus.io/guides/maven-tooling" target="_blank">Configure sua IDE</a></li>
+                <li><a href="https://quarkus.io/guides/getting-started" target="_blank">Começando</a></li>
+                <li><a href="https://quarkus.io/guides/" target="_blank">Todos os guias</a></li>
+                <li><a href="https://quarkus.io" target="_blank">Site da Quarkus</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
