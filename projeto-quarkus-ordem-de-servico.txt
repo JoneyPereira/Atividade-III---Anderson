@@ -1,4 +1,9 @@
-			
+			CDI:
+				-
+			JAX-RS:
+				-
+			JPA:
+				-
 			
 			.\mvnw quarkus:dev
 			
@@ -32,7 +37,6 @@
 					}
 					
 				public class InserirOrdemServicoDTO{
-					
 					private String descricao;
 					private LocalDate data;
 					private String categoria;
@@ -45,3 +49,51 @@
 					ordenServico.data = inserirOrdemServicoDTO.getData;
 					ordenServico.categoria = inserirOrdemServicoDTO.categoria;
 				}
+				
+				public void novaOrdemServico(InserirOrdemServicoDTO inserirOrdemServicoDTO){
+					ordemServicoService.novaOrdemServico(inserirOrdemServicoDTO);
+				}
+				
+				exemplo:
+				
+					@Path("/ordemservico")
+					@Consumes(APPLICATION_JSON)
+					@Produces(APPLICATION_JSON)
+					public class OrdemServico {
+						@Inject
+						OrdemRepository OrdemRepository;
+
+						@GET
+						@Path("/{id}")
+						Response get(@PathParam("id")Long id) {
+							return OremRepository.find(id)
+												 .map(Response::ok)
+												 .orElse(Response.status(NOT_FOUND))
+												 .build();
+						}
+					}
+					
+					@Path("/ordemservico")
+					public class OrdemServicoResource {
+
+						@GET
+						@Produces(MediaType.APPLICATION_JSON)
+						public List<OrdemServico> getAllOrdemServico() {}
+
+						@POST
+						@Produces(MediaType.APPLICATION_JSON)
+						public Response createOrdemServico(OrdemServico ordemServico) {}
+
+						@DELETE
+						@Path("{id}")
+						@Produces(MediaType.APPLICATION_JSON)
+						public Response deleteOrdemServico(
+							@PathParam("id") String id) {}
+
+
+						@GET
+						@Produces(MediaType.APPLICATION_JSON)
+						@Path("buscar")
+						public Response searchOrdemServico(
+							@QueryParam("id") String id) {}
+					}
