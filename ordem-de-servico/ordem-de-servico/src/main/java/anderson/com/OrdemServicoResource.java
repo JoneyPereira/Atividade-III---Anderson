@@ -1,8 +1,10 @@
 package anderson.com;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.time.LocalDate;
 import java.util.List;
 
 @Path("/ordemservico")
@@ -30,14 +32,16 @@ public class OrdemServicoResource {
     }
     */
 
+    /*
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public OrdemServico novaOrdemServico(OrdemServico ordemServico) {
         return ordemServico;
     }
+    */
 
 
-    /*
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
@@ -48,5 +52,4 @@ public class OrdemServicoResource {
         ordenServico.categoria = "OUTRAS";
         ordenServico.persist();
     }
-    */
 }
