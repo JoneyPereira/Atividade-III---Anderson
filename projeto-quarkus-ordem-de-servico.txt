@@ -10,6 +10,7 @@
 			.\mvnw quarkus:add-extensions -Dextensions="hibernate-orm-panache"
 			.\mvnw quarkus:add-extensions -Dextensions="quarkus-jdbc-postgresql"
 			.\mvnw quarkus:add-extensions -Dextensions="quarkus-resteasy-jackson"
+			.\mvnw quarkus:add-extensions -Dextensions="quarkus-smallrye-openapi"
 			
 			import.sql
 				insert into OrdemServico(id, descricao, data, categoria ) values(nestval('hibernate_sequence'), 'Realizar troca de impressora.', LocalDate.of(2021, 28, 12), 'URGENTE');

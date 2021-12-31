@@ -5,14 +5,16 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/ordemservico")
+@Path("ordemservico")
+
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class OrdemServicoResource {
 
     @Inject
     OrdemServicoService ordemServicoService;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     public List<OrdemServico> list(){
         return ordemServicoService.list();
     }
@@ -30,8 +32,8 @@ public class OrdemServicoResource {
     }
     */
 
+
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
     public OrdemServico novaOrdemServico(OrdemServico ordemServico) {
         return ordemServico;
     }
