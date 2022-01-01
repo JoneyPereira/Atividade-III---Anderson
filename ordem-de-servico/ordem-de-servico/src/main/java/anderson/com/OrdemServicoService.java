@@ -1,10 +1,7 @@
 package anderson.com;
 
-import com.ibm.asyncutil.util.Either;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.util.List;
 
 @ApplicationScoped
@@ -15,15 +12,10 @@ public class OrdemServicoService {
     }
 
     @Transactional
-    public void novaOrdemServico(InserirOrdemServicoDTO inserirOrdemServicoDTO){
+    public void novaOrdemServico(InserirOrdemServicoDTO dto){
         OrdemServico ordenServico = new OrdemServico();
-        ordenServico.descricao = "Realizar troca de impressora.";
-        ordenServico.data = LocalDate.now();
-        ordenServico.categoria = "OUTRAS";
+        ordenServico.descricao = dto.getDescricao();
+        ordenServico.categoria = dto.getCategoria();
         ordenServico.persist();
-    }
-
-    public Either<OrdemServico, Object> find(Long id) {
-        return null;
     }
 }

@@ -1,6 +1,7 @@
 package anderson.com;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -34,8 +35,13 @@ public class OrdemServicoResource {
 
 
     @POST
-    public OrdemServico novaOrdemServico(OrdemServico ordemServico) {
-        return ordemServico;
+    @Transactional
+    public void OrdemServico(InserirOrdemServicoDTO dto) {
+        OrdemServico ordemServico = new OrdemServico();
+        ordemServico.categoria= dto.getCategoria();
+        ordemServico.descricao= dto.getDescricao();
+        ordemServico.persist();
+
     }
 
 

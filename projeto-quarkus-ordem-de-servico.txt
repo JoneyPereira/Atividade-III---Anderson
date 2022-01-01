@@ -41,6 +41,10 @@
 					private String descricao;
 					private LocalDate data;
 					private String categoria;
+					@CreationTimestamp
+					private LocalDate dataCriacao;
+					@UpdateTimestamp
+					private LocalDate dataAtualizacao;
 				}
 				
 				public void novaOrdemServico(InserirOrdemServicoDTO inserirOrdemServicoDTO){
