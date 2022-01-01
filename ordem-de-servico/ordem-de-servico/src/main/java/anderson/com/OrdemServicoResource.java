@@ -1,7 +1,5 @@
 package anderson.com;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -61,6 +59,16 @@ public class OrdemServicoResource {
         }else {
             throw new NotFoundException("Ordem de serviço não existe!");
         };
+    }
+
+    @DELETE
+    @Path("{id}")
+    @Transactional
+    public void OrdemServico(@PathParam("id") long id) {
+        Optional<OrdemServico> ordemServicoOp = OrdemServico.findByIdOptional(id);
+        ordemServicoOp.ifPresentOrElse(OrdemServico::delete,
+                ()->{throw new NotFoundException("Não existe esta ordem de serviço!");
+        });
     }
 
 
