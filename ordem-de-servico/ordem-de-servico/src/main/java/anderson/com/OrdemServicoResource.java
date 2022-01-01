@@ -1,10 +1,13 @@
 package anderson.com;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Optional;
 
 @Path("ordemservico")
 
@@ -42,6 +45,22 @@ public class OrdemServicoResource {
         ordemServico.descricao= dto.getDescricao();
         ordemServico.persist();
 
+    }
+
+    @PUT
+    @Path("{id}")
+    @Transactional
+    public void OrdemServico(@PathParam("id") long id, InserirOrdemServicoDTO dto) {
+        Optional<OrdemServico> ordemServicoOp = OrdemServico.findByIdOptional(id);
+        if (ordemServicoOp.isPresent()){
+            OrdemServico ordemServico = ordemServicoOp.get();
+            ordemServico.categoria= dto.getCategoria();
+            ordemServico.descricao= dto.getDescricao();
+            ordemServico.persist();
+
+        }else {
+            throw new NotFoundException("Ordem de serviço não existe!");
+        };
     }
 
 
