@@ -3,3 +3,9 @@ insert into OrdemServico(id, descricao, data, categoria ) values(nextval('hibern
 insert into OrdemServico(id, descricao, data, categoria ) values(nextval('hibernate_sequence'),'Realizar troca de roteador.','2021-12-30','OUTRAS');
 insert into OrdemServico(id, descricao, data, categoria ) values(nextval('hibernate_sequence'),'Realizar troca de cabo de rede.','2021-12-30','URGENTE');
 insert into OrdemServico(id, descricao, data, categoria ) values(nextval('hibernate_sequence'),'Realizar troca de impressora.','2021-12-30','OUTRAS');
+insert into Usuario(id, nomeUsuario) values(nextval('hibernate_sequence'),'Rafael de Lima');
+insert into Usuario(id, nomeUsuario) values(nextval('hibernate_sequence'),'Marcos Antonio');
+insert into Tecnico(id, nomeTecnico) values(nextval('hibernate_sequence'),'Rafaela de Paula');
+insert into Tecnico(id, nomeTecnico) values(nextval('hibernate_sequence'),'José Ricardo');
+insert into Gerente(id, nomeGerente) values(nextval('hibernate_sequence'),'Paulo de Sousa');
+insert into Gerente(id, nomeGerente) values(nextval('hibernate_sequence'),'Juliana Freire');

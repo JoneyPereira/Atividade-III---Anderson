@@ -124,3 +124,9 @@
 								.build();
 							}
 						}
+		classes entidade principais:
+			Usuario: nome; id
+			Tecnico: nome; id
+			Gerente: nome; id
+			Chamadas: ordemServico;
+			Cadastro: ordemServico;
